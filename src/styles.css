@@ -1,0 +1,107 @@
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 25px;
+  letter-spacing: 0.6em;
+  text-align: center;
+  margin-left: 17px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 25px;
+  letter-spacing: 0.3em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  padding: 25px 30px 30px 30px;
+  background-color: transparent;
+  border-radius: 30px;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+  display: block;
+  color: #916a89;
+}
+
+button {
+  display: inline-block;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px;
+  text-decoration: underline;
+  color: #916a89;
+  max-width: 190px;
+}
+
+input {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(166, 124, 158, 0.25);
+  padding: 10px;
+  text-align: center;
+  color: whitesmoke;
+}
+
+#go {
+  border-radius: 10px;
+}
+
+::placeholder {
+  color: whitesmoke;
+}
+
+.humidityWind {
+  color: #916a89;
+}
+
+.card {
+  background: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+  border-radius: 40px;
+  border: none;
+}
+
+.container {
+  display: block;
+  text-align: center;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 30px auto;
+  font-family: "Quicksand", sans-serif;
+}
+
+.col {
+  text-align: center;
+  padding: 2px;
+}
+
+.rain {
+  font-size: 33px;
+}
+
+.cloudy {
+  font-size: 30px;
+}
+
+.smog {
+  font-size: 33px;
+}
+
+.sunny {
+  font-size: 33px;
+}
+
+.weekly {
+  margin: 20px 20px;
+  color: #a77c9e;
+}
