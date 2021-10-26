@@ -57,6 +57,10 @@ input {
   border-radius: 10px;
 }
 
+#coded-by {
+  font-size: 13px;
+}
+
 ::placeholder {
   color: whitesmoke;
 }
