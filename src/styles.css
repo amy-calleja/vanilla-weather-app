@@ -1,4 +1,7 @@
 h1 {
+  text-align: center;
+  display: inline-block;
+  color: #916a89;
   font-size: 70px;
 }
 
@@ -24,7 +27,6 @@ h3 {
   border: none;
 }
 
-h1,
 h2,
 h3,
 p {
@@ -63,6 +65,11 @@ input {
 
 ::placeholder {
   color: whitesmoke;
+}
+
+.temperatures-display .units {
+  position: relative;
+  top: -34px;
 }
 
 .humidityWind {

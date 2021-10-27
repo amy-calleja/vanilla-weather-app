@@ -52,7 +52,7 @@ function showCurrentWeather(response) {
   console.log(response.data.main.temp);
   document.querySelector("h2").innerHTML = `${response.data.name}`;
   document.querySelector("h1").innerHTML =
-    Math.round(response.data.main.temp) + `°C`;
+    `🌤` + Math.round(response.data.main.temp);
   document.querySelector("h3").innerHTML = `${response.data.weather[0].main}`;
   document.querySelector(
     "#humidity"
