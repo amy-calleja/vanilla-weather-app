@@ -81,6 +81,15 @@ input {
   top: -34px;
 }
 
+.temperatures-display .activeLink {
+  color: #916a89;
+}
+
+.temperatures-display .activeLink:hover {
+  text-decoration: none;
+  cursor: default;
+}
+
 .humidityWind {
   color: #916a89;
 }

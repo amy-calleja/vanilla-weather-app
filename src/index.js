@@ -55,7 +55,8 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchSubmit);
 
 function showCurrentWeather(response) {
-  console.log(response.data.main.temp);
+  celsiusTemp = response.data.main.temp;
+
   document.querySelector("h2").innerHTML = `${response.data.name}`;
   document.querySelector("h1").innerHTML = Math.round(response.data.main.temp);
   document.querySelector(
@@ -89,6 +90,29 @@ function searchCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getCurrentPosition);
 }
+
+function changeFahrenheit(event) {
+  event.preventDefault();
+  let h1 = document.querySelector("h1");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  h1.innerHTML = Math.round(fahrenheitTemp);
+  celsiusLink.classList.remove("activeLink");
+  fahrenheitLink.classList.add("activeLink");
+}
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", changeFahrenheit);
+
+let celsiusTemp = null;
+
+function changeCelsius(event) {
+  event.preventDefault();
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = Math.round(celsiusTemp);
+  celsiusLink.classList.add("activeLink");
+  fahrenheitLink.classList.remove("activeLink");
+}
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", changeCelsius);
 
 let button = document.querySelector("button");
 button.addEventListener("click", searchCurrentPosition);
