@@ -81,6 +81,10 @@ input {
   top: -34px;
 }
 
+.units {
+  color: #916a89;
+}
+
 .temperatures-display .activeLink {
   color: #916a89;
 }
