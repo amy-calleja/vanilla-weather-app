@@ -15,9 +15,10 @@ h2 {
 
 h3 {
   font-size: 25px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
   text-align: center;
   margin-bottom: 20px;
+  text-transform: capitalize;
 }
 
 .search-bar {
@@ -61,6 +62,14 @@ input {
 
 #coded-by {
   font-size: 13px;
+}
+
+#icon {
+  max-width: 120px;
+  display: inline;
+  position: relative;
+  top: -20px;
+  right: -10px;
 }
 
 ::placeholder {
