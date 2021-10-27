@@ -3,7 +3,13 @@ let now = new Date();
 let p = document.querySelector("p#date");
 let date = now.getDate();
 let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 let year = now.getFullYear();
 let days = [
   "Sunday",
@@ -30,7 +36,7 @@ let months = [
   "Dec",
 ];
 let month = months[now.getMonth()];
-p.innerHTML = `${day} ${date} ${month} ${year}, ${hours}:${minutes}`;
+p.innerHTML = `${day} ${date} ${month} ${year} </br><small>Last Updated: ${hours}:${minutes}</small>`;
 
 function searchCity(city) {
   let apiKey = "e6d77207b4f23501665fd95fe5e4f761";
