@@ -76,6 +76,8 @@ function showCurrentWeather(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
+  celsiusLink.classList.add("activeLink");
+  fahrenheitLink.classList.remove("activeLink");
 }
 
 function getCurrentPosition(position) {
@@ -84,8 +86,6 @@ function getCurrentPosition(position) {
   let apiKey = "e6d77207b4f23501665fd95fe5e4f761";
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showCurrentWeather);
-  celsiusLink.classList.add("activeLink");
-  fahrenheitLink.classList.remove("activeLink");
 }
 
 function searchCurrentPosition(event) {
