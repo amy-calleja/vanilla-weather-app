@@ -78,9 +78,17 @@ function showCurrentWeather(response) {
     );
   celsiusLink.classList.add("activeLink");
   fahrenheitLink.classList.remove("activeLink");
+  getForecast(response.data.coord);
 }
 
-function showForecast() {
+function getForecast(coordinates) {
+  let apiKey = "e6d77207b4f23501665fd95fe5e4f761";
+  let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(url);
+  axios.get(url).then(showForecast);
+}
+
+function showForecast(response) {
   let forecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri"];
@@ -102,6 +110,7 @@ function showForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
+  console.log(response.data.daily);
 }
 
 function getCurrentPosition(position) {
