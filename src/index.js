@@ -80,6 +80,30 @@ function showCurrentWeather(response) {
   fahrenheitLink.classList.remove("activeLink");
 }
 
+function showForecast() {
+  let forecast = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  weekdays.forEach(function (weekday) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+      <div class="weather-forecast-date">${weekday}</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="40"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max">20°</span>
+          <span class="weather-forecast-temperature-min">12°</span>
+        </div>
+      </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
 function getCurrentPosition(position) {
   console.log(position.coords.latitude);
   console.log(position.coords.longitude);
@@ -120,3 +144,4 @@ let button = document.querySelector("button");
 button.addEventListener("click", searchCurrentPosition);
 
 searchCity("Milan");
+showForecast();
