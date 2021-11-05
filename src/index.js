@@ -76,8 +76,6 @@ function showCurrentWeather(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-  celsiusLink.classList.add("activeLink");
-  fahrenheitLink.classList.remove("activeLink");
   getForecast(response.data.coord);
 }
 
@@ -130,8 +128,6 @@ function showForecast(response) {
 }
 
 function getCurrentPosition(position) {
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
   let apiKey = "e6d77207b4f23501665fd95fe5e4f761";
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showCurrentWeather);
@@ -142,28 +138,8 @@ function searchCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(getCurrentPosition);
 }
 
-function changeFahrenheit(event) {
-  event.preventDefault();
-  let h1 = document.querySelector("h1");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  h1.innerHTML = Math.round(fahrenheitTemp);
-  celsiusLink.classList.remove("activeLink");
-  fahrenheitLink.classList.add("activeLink");
-}
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", changeFahrenheit);
 
 let celsiusTemp = null;
-
-function changeCelsius(event) {
-  event.preventDefault();
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = Math.round(celsiusTemp);
-  celsiusLink.classList.add("activeLink");
-  fahrenheitLink.classList.remove("activeLink");
-}
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", changeCelsius);
 
 let button = document.querySelector("button");
 button.addEventListener("click", searchCurrentPosition);
