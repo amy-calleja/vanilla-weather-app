@@ -138,7 +138,6 @@ function searchCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(getCurrentPosition);
 }
 
-
 let celsiusTemp = null;
 
 let button = document.querySelector("button");
