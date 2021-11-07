@@ -1,7 +1,7 @@
 h1 {
   text-align: center;
   display: inline-block;
-  color: #916a89;
+  color: whitesmoke;
   font-size: 70px;
 }
 
@@ -28,12 +28,16 @@ h3 {
   border: none;
 }
 
+p {
+  opacity: 0.9;
+}
+
 h2,
 h3,
 p {
   text-align: center;
   display: block;
-  color: #916a89;
+  color: whitesmoke;
 }
 
 button {
@@ -43,7 +47,7 @@ button {
   border-radius: 10px;
   border: 1px;
   text-decoration: underline;
-  color: #916a89;
+  color: whitesmoke;
   max-width: 190px;
 }
 
@@ -82,17 +86,19 @@ input {
 }
 
 .units {
-  color: #916a89;
+  color: whitesmoke;
 }
 
 .humidityWind {
-  color: #916a89;
+  color: whitesmoke;
+  opacity: 0.9;
 }
 
 .card {
-  background: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
   border-radius: 40px;
   border: none;
+  filter: blur(0px);
+  background-size: cover;
 }
 
 .container {
@@ -111,7 +117,7 @@ input {
 
 .weather-forecast {
   margin: 20px 20px;
-  color: #a77c9e;
+  color: whitesmoke;
   text-align: center;
 }
 

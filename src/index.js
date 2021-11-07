@@ -138,6 +138,20 @@ function searchCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(getCurrentPosition);
 }
 
+function wallpaper() {
+  let hour = now.getHours();
+  console.log(hour);
+  if (hours > 17)
+    document.querySelector(".card").url({
+      backgroundImage: "url(././src/morning.png)",
+    });
+  else {
+    document.getElementsByClassName(".card").url({
+      backgroundImage: "url(././src/night.png)",
+    });
+  }
+}
+
 let celsiusTemp = null;
 
 let button = document.querySelector("button");
