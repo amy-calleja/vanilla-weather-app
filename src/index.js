@@ -149,7 +149,7 @@ function wallpaper() {
       "url(././src/afternoon.jpeg)";
   } else {
     document.querySelector(".card").style.backgroundImage =
-      "url(././src/evening.png)";
+      "url(././src/evening.jpeg)";
   }
 }
 wallpaper();
