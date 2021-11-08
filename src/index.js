@@ -22,21 +22,21 @@ let days = [
 ];
 let day = days[now.getDay()];
 let months = [
-  "Jan",
-  "Feb",
+  "January",
+  "February",
   "March",
-  "Apr",
+  "April",
   "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 let month = months[now.getMonth()];
-p.innerHTML = `${day} ${date} ${month} ${year} </br><small>Last Updated: ${hours}:${minutes}</small>`;
+p.innerHTML = `${day}, ${date} ${month} ${year} </br><small>Last Updated: ${hours}:${minutes}</small>`;
 
 function searchCity(city) {
   let apiKey = "e6d77207b4f23501665fd95fe5e4f761";
@@ -69,7 +69,7 @@ function showCurrentWeather(response) {
     "#wind"
   ).innerHTML = `<i class="fas fa-wind"></i> Wind: ${Math.round(
     response.data.wind.speed
-  )} km/h`;
+  )}km/h`;
   document
     .querySelector("#icon")
     .setAttribute(
@@ -141,16 +141,18 @@ function searchCurrentPosition(event) {
 function wallpaper() {
   let hour = now.getHours();
   console.log(hour);
-  if (hours > 17)
-    document.querySelector(".card").url({
-      backgroundImage: "url(././src/morning.png)",
-    });
-  else {
-    document.getElementsByClassName(".card").url({
-      backgroundImage: "url(././src/night.png)",
-    });
+  if (hours < 12) {
+    document.querySelector(".card").style.backgroundImage =
+      "url(././src/mornings.jpeg)";
+  } else if (hours > 12 && hours < 17) {
+    document.querySelector(".card").style.backgroundImage =
+      "url(././src/afternoon.jpeg)";
+  } else {
+    document.querySelector(".card").style.backgroundImage =
+      "url(././src/evening.png)";
   }
 }
+wallpaper();
 
 let celsiusTemp = null;
 
