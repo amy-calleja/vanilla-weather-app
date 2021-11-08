@@ -47,6 +47,10 @@ button {
   color: whitesmoke;
   max-width: 190px;
 }
+button:focus {
+  border: none;
+  outline: none;
+}
 
 input {
   border: none;
@@ -55,6 +59,7 @@ input {
   padding: 10px;
   text-align: center;
   color: rgb(255, 255, 255);
+  outline: none;
 }
 
 #go {
