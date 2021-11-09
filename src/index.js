@@ -144,7 +144,7 @@ function wallpaper() {
   if (hours < 12) {
     document.querySelector(".card").style.backgroundImage =
       "url(././src/mornings.jpeg)";
-  } else if (hours > 12 && hours < 17) {
+  } else if (hours < 17) {
     document.querySelector(".card").style.backgroundImage =
       "url(././src/afternoon.jpeg)";
   } else {
